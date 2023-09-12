@@ -15,13 +15,27 @@ let num1 = Number(prompt ('Введите стоимость товара'));
 let num2 = Number(prompt ('Введите количество денег у клиента'));
 let a = num1-num2;
 let b = num2-num1;
+let text;
 
 if (num1==num2){
-    console.log('Покупка совершена');
+    text='Покупка совершена';
 }else{
     if(num1>num2){
-        console.log('Для покупки не хватает '+a+' руб.');
+        text='Для покупки не хватает '+a+' руб.';
     }else{
-        console.log('Покупка совершена. Сдача '+b+' руб.');
+        text='Покупка совершена. Сдача '+b+' руб.';
     }
 }
+
+
+let box ='<div class="box">'+text+'</div>';
+let for_box=document.querySelector('.for_box');
+for_box.style.border='1px solid yellow';
+for_box.style.borderRadius='20px';
+for_box.style.fontSize='18px';
+for_box.style.padding='15px 30px';
+for_box.style.width='500px';
+for_box.style.backgroundColor='pink';
+
+for_box.innerHTML=box;
+
